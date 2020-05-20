@@ -1,176 +1,87 @@
+ /* MENU FIJO HEADER */
 
+ var menu = document.getElementById("header_position");
+ var altura = menu.offsetTop;
+ var scroll = window.pageYOffset;
+ var menuFijo = document.getElementById("menu-navegacion");
+ 
+ // alert(altura);
 
-// BARRA DE NAVEGACIÓN Y MENU DESPLEGABLE //
+ //  alert(window.pageYOffset);
 
-// $(document).ready(function () {
+ window.addEventListener("scroll", function () {
 
-//     var enlaceRedesSociales = document.querySelectorAll("a,i");
+     if (window.pageYOffset > altura) {
 
-//     for (var i = 0; i < enlaceRedesSociales.length; i++) {
+         menuFijo.classList.add("fixed");
 
-//         enlaceRedesSociales[i].addEventListener("mouseover", iluminar, false);
+     } else {
 
-//         enlaceRedesSociales[i].addEventListener("mouseout", normalidad, false);
-//     };
+         menuFijo.classList.remove("fixed");
+     }
 
-// });
 
-// function iluminar(e) {
+ });
 
-//     if (e.target == facebook) {
+ 
+/* MENU PLEGABLE */
 
-//         $("#facebook").addClass("destacar");
-//         var borderFondo = $("#facebook").css("border-bottom");
-//         $("#facebook").css("border-bottom", "3px solid red");
 
+ $(document).ready(main);
 
 
-//     } else if (e.target === instagram) {
+ var contador = 1;
 
-//         $("#instagram").addClass("destacar");
-//         var borderFondo = $("#instagram").css("border");
-//         $("#instagram").css("border-bottom", "3px solid red");
+ function main() {
 
-//     }
-// };
 
-// function normalidad(e) {
+     $("#barraHeader").click(function () {
 
-//     if (e.target === facebook) {
+         if (contador == 1) {
 
-//         $("#facebook").removeClass("destacar");
-//         $("#facebook").css("border-bottom", "none");
+             $(".menuSacar").animate({
+                 left: "0"
+             });
 
-//     } else if (e.target == instagram) {
-//         $("#instagram").removeClass("destacar");
-//         $("#instagram").css("border-bottom", "none");
-//     };
-// };
+             contador = 0;
+             
+            } else {
 
+             contador = 1;
 
-$(document).ready(function () {
+             $(".menuSacar").animate({
+                 left: "-100%"
+             });
 
-    $(".menuDesplegable").hide();
+            }
 
-    $("#barraHeader").click(function () {
+        })
+        
+ 
+            };
 
-        $(".menuDesplegable").slideToggle(1000);
-        $(this).css("color", "#fe4918");
+/* PREGUNTAS FRECUENTES */
 
-    });
+ $(document).ready(function(){
 
-    $("#barraHeader").mouseover(function(){
+     $(".pf_preguntas #respuesta").hide();
 
-        $(this).css("color", "#fe4918");
-    })
+     let icono=true;
 
-    $("#barraHeader").mouseout(function(){
+     $(".pf_suma").click(function(){
 
-        $(this).css("color", "#ffffff");
-    })
+         $(this).next("#respuesta").fadeToggle(500);
 
+         if(icono){
 
+             $(this).addClass("pf_resta");
+             icono=false;
+         } else{
 
-});
+             $(this).removeClass("pf_resta");
+             icono=true;
+         }
 
+     });
 
-
-
-// $(document).ready(function () {
-
-//     $("#menuNav").hide();
-
-//     document.getElementById("barraHeader").addEventListener("click", abrir, false);
-//     document.getElementById("barraHeader").addEventListener("mouseover", brillo, false);
-//     document.getElementById("barraHeader").addEventListener("mouseout", normal, false);
-
-
-// });
-
-// function abrir() {
-
-
-
-//     $("#menuNav").toggle(2000);
-
-// };
-
-
-
-// function brillo(e) {
-
-//     if (e.target == barraHeader) {
-
-//         $("#barraHeader").addClass("destacar");
-//         var borderFondo = $("#barraHeader").css("border-bottom", "2px solid #f83c08");
-//     }
-
-
-// };
-
-// function normal(e) {
-
-//     if (e.target === barraHeader) {
-
-//         $("#barraHeader").removeClass("destacar");
-//         $("#barraHeader").css("border-bottom", "none");
-
-//     }
-// };
-
-
-
-// PREGUNTAS FRECUENTES //
-
-
-$(document).ready(function () {
-
-    $(".pf_preguntas #respuesta").hide();
-
-    $(".pf_suma").click(function () {
-
-        $(this).next("#respuesta").slideToggle(1000);
-        $(this).toggleClass("pf_resta");
-
-    })
-
-
-
-
-});
-
-
-
-// $(document).ready(function () {
-//     $(".pf_preguntas #respuesta").hide();
-//     $(".pf_suma").click(function () {
-//         $(this).next("#respuesta").slideToggle(1000); //apuntamos al siguiente elemento del this
-//         $(this).toggleClass("pf_resta"); //cambiamos la clase para cambiar la imagen 
-
-//     });
-// });
-
-
-// $(document).ready(function(){
-
-//     $(".pf_preguntas #respuesta").hide();
-
-//     let icono=true;
-
-//     $(".pf_suma").click(function(){
-
-//         $(this).next("#respuesta").fadeToggle(500);
-
-//         if(icono){
-
-//             $(this).addClass("pf_resta");
-//             icono=false;
-//         } else{
-
-//             $(this).removeClass("pf_resta");
-//             icono=true;
-//         }
-
-//     });
-
-// });
+ });

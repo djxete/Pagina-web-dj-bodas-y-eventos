@@ -58,8 +58,14 @@ body{
     background-color: #ffffff9a;
     position:relative;
     font-family:'PT Sans', sans-serif;
+    
 
 }
+
+.opacidadMEnu{
+    opacity:1;
+}
+
 p,ul,figure{
     margin:0;
 }
@@ -137,16 +143,27 @@ h3{
 }
 
 
+
 /* NAVEGACIÓN */
 
 .navegacion-header{
-  
+   
     background-color: #f8704a;
     border-bottom: 2px dotted black ;
     height: 80px; 
+    width:100%;  
+    transition: all .1s;
     
     
 }
+.fixed{
+    position:fixed;
+    z-index: 500;
+    top:0;
+    left:0;
+    width:100%;
+}
+
 
 
 .contenido-navegacion{
@@ -203,9 +220,8 @@ h3{
 /* MENU DESPLEGABLE*/
 
 .menuDesplegable{
-    height: 325px;
-    /* display:none; */
-    background-color: #ffffff;
+    height: 100%;
+   background-color: #ffffff;
 
 }
 
@@ -217,6 +233,18 @@ h3{
     
 
 }
+
+.menuSacar{
+    width:85%;
+    height:50%;
+    margin:0;
+    background-color: #ffffff;
+    position:fixed;
+    z-index: 500;
+    left:-100%;
+}
+
+
 
 .listaPrincipio{
   
