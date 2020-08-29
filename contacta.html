@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dj Bodas y Eventos</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pushbar.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <nav class="navegacion-header " id="menu-navegacion">
+        <div class="contenido-navegacion contenedor">
+            <nav class="contenido-navegacion-nav" id="contenido-navegacion-nav">
+                <ul class="menu__navegacion">
+                    <li class="menu__navegacion-li"><a href="index.html" target="_blank" class="lista2">inicio</a></li>
+                    <li class="menu__navegacion-li"><a href="quiensoy.html" target="_blank" class="lista2">quien soy</a>
+                    </li>
+                    <li class="menu__navegacion-li"><a href="servicios.html" class="lista2">servicios</a></li>
+                    <li class="menu__navegacion-li"><a href="preguntas_frecuentes.html" target="_blank"
+                            class="lista2">preguntas frecuentes</a></li>
+                    <li class="menu__navegacion-li"><a href="contacta.html" target="_blank" class="lista2">contacta</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <i class="fas fa-bars" id="barraHeader"></i>
+            <img class="icono_cascos" src="img/icono_cascos.png">
+            <h2 class="h2_dj" id="h2_dj">DJ CHETE</h2>
+
+        </div>
+
+    </nav>
+
+    <!-- <div class="menu"> -->
+
+
+
+
+
+
+    <nav class="menuSacar" id="menuNav">
+
+        <ul class="listaDesplegable">
+            <li class="listaPrincipio"><a href="index.html" target="_blank" class="lista">inicio</a><button
+                    class="listaPrincipio-button">X</button></li>
+            <li class="listaPrincipio"><a href="quiensoy.html" target="_blank" class="lista">quien soy</a></li>
+            <li class="listaPrincipio"><a href="servicios.html" class="lista">servicios</a></li>
+            <li class="listaPrincipio"><a href="preguntas_frecuentes.html" target="_blank" class="lista">preguntas
+                    frecuentes</a></li>
+            <li class="listaPrincipio"><a href="contacta.html" target="_blank"
+                    class="listaUltimo"><span>contacta</span></a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+
+
+
+    <div class="opacidadMEnu">
+
+
+
+        <h3 class="separador">contáctanos</h3>
+
+
+        <div class="imagen_contacta">
+            <!-- <img src="img/contacta.jpg" class="imagen_contacta2" alt="imagen_contacta"> -->
+
+
+            <form action="#" class="contenedor formulario" id="formulario">
+
+
+                <fieldset class="formulario1">
+                    <legend>información personal</legend>
+
+                    <div class="form-control">
+                        <label for="nombre">nombre:</label>
+                        <input type="text" placeholder="Tu nombre" class="input_form" id="nombre__value">
+                        <p class="name__p">El nombre tiene que ser solo letras</p>
+                    </div>
+
+                    <div class="form-control">
+
+                        <label for="">email:</label>
+                        <input type="email" placeholder="Tu correo electrónico" class="input_form" id="email__value">
+                        <p class="email__p">Debe ser una dirección de email válida</p>
+                    </div>
+
+                    <div class="form-control">
+
+                        <label for="">teléfono:</label>
+                        <input type="tel" placeholder="Tu número de teléfono" class="input_form" id="telefono__value">
+                        <p class="telefono__p">El teléfono debe ser solo número y no puede contener símbolos</p>
+
+                    </div>
+
+                    <label for="">mensaje:</label>
+                    <input class="input_alto input_form" type="text" id="textarea__value">
+                    <p class="textarea__p">No puede tener mas de 200 caracteres</p>
+                </fieldset>
+
+                <fieldset class="formulario2">
+                    <legend>información eventos</legend>
+
+                    <label for="opciones">tipo de evento</label>
+                    <select name="" id="">
+                        <option value="" disabled>-- Selecciona--</option>
+                        <option value="">Boda</option>
+                        <option value="">Cumpleaños</option>
+                        <option value="">Evento deportivo</option>
+                        <option value="">Fiesta empresa</option>
+                        <option value="">Evento privado</option>
+                    </select>
+
+                    <label for="">dia</label>
+                    <input type="date" class="input_form" id="dia__value">
+                    <p class="date__p">No puede ser una fecha antes de la fecha de hoy</p>
+
+                </fieldset>
+
+                <fieldset class="formulario3">
+
+                    <legend>infomación contacto</legend>
+
+
+                    <p class="formulario3-p">Cómo desea ser contactado:</p>
+
+                    <div class="formulario3__div">
+
+                        <label for="" class="formulario3__div-label">teléfono</label>
+                        <input type="checkbox" class="input_form-radio" >
+                        <label for="" class="formulario3__div-label">email</label>
+                        <input type="checkbox" class="input_form-radio" checked>
+
+                    </div>
+
+                    <p class="formulario3-p">Si eligió teléfono, eliga ahora la fecha y hora:</p>
+
+                    <label for="">fecha</label>
+                    <input type="date" class="input_form" id="dia__value__contacto">
+                    <p class="date__p">No puede ser una fecha antes de la fecha de hoy</p>
+                    <label for="">hora</label>
+                    <input type="time" class="input_form" id="hora__value__contacto">
+
+
+                    <input type="submit" class="botton_form" value="Enviar" id="submit">
+
+                </fieldset>
+
+
+            </form>
+
+
+        </div>
+
+
+
+
+        <footer class="footer_abajo">
+
+
+            <div class="footer_fondo">
+                <div class=" footer_abajo__primero ">
+                    <nav class="iconos_footer contenedor">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </nav>
+                    <nav class="footer_abajo__segundo">
+                        <a href="">inicio</a>
+                        <a href="">quien soy</a>
+                        <a href="">servicios</a>
+                    </nav>
+
+                </div>
+
+            </div>
+            <div class="fondo_footer">
+                <div class="footer_final contenedor">
+                    <p>todos los derechos reservados &copy;</p>
+                    <p><span class="footer__final-p-span">dj chete</span></p>
+                </div>
+
+            </div>
+
+
+        </footer>
+
+    </div>
+
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.lettering.js"></script>
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,87 +1,185 @@
- /* MENU FIJO HEADER */
+'use strict'
 
- var menu = document.getElementById("header_position");
- var altura = menu.offsetTop;
- var scroll = window.pageYOffset;
- var menuFijo = document.getElementById("menu-navegacion");
- 
- // alert(altura);
-
- //  alert(window.pageYOffset);
-
- window.addEventListener("scroll", function () {
-
-     if (window.pageYOffset > altura) {
-
-         menuFijo.classList.add("fixed");
-
-     } else {
-
-         menuFijo.classList.remove("fixed");
-     }
+$(document).ready(function () {
 
 
- });
+    //---------------------------PÁGINA INDEX.HTML----------------------
 
- 
-/* MENU PLEGABLE */
+    //1º sacar menú navegacion
+    //------------------------------------------------------------------
+
+    let menuSacar = document.querySelector(".menuSacar");
+    let barraHeader = document.getElementById("barraHeader");
+    let botonAbajo = document.querySelector(".boton__contenido_dj");
+    let anchoPantalla = screen.width;
+    let botonMenuSacar = document.querySelector(".listaPrincipio-button");
+    let opacidad = document.querySelector(".opacidadMEnu");
 
 
- $(document).ready(main);
+    // Esconder menu cuando le damos al botón que aparece en >
+
+    $(".listaPrincipio-button").click(function () {
+
+        $(".menuSacar").animate({
+            left: "-10000px"
+        }, {
+            duration: 3000
+        });
+
+        $(".opacidadMEnu").animate({
+            opacity: "1"
+        }, {
+            duration: 2000
+        });
+
+    });
 
 
- var contador = 1;
 
- function main() {
+    // Esconde el menu cuando le damos al icono de las 3 barritas
 
 
-     $("#barraHeader").click(function () {
+    $("#barraHeader").click(function () {
+        $(".menuSacar").toggle("slow", function () {
 
-         if (contador == 1) {
 
-             $(".menuSacar").animate({
-                 left: "0"
-             });
+            if (menuSacar.style.display == "none") {
+                opacidad.style.opacity = "1";
 
-             contador = 0;
-             
             } else {
+                opacidad.style.opacity = "0.4";
+                opacidad.style.pointerEvents = "none";
 
-             contador = 1;
-
-             $(".menuSacar").animate({
-                 left: "-100%"
-             });
-
-            }
-
-        })
-        
- 
             };
 
-/* PREGUNTAS FRECUENTES */
 
- $(document).ready(function(){
+        });
 
-     $(".pf_preguntas #respuesta").hide();
+    })
 
-     let icono=true;
+ 
 
-     $(".pf_suma").click(function(){
 
-         $(this).next("#respuesta").fadeToggle(500);
+    //     2º cada imagen cuando nos situamos encima de cada una, se tiene que agrandar la imagen,cambiar el color y quitar la pestaña de abajo
+    //     --------------------------------------------------------------
 
-         if(icono){
 
-             $(this).addClass("pf_resta");
-             icono=false;
-         } else{
+    let imgs = document.querySelectorAll(".imagen-evento");
 
-             $(this).removeClass("pf_resta");
-             icono=true;
-         }
+    let cuadradoImagenes = document.querySelectorAll(".eventoEnlace");
 
-     });
+    for(let i = 0; i < imgs.length ; i++){
 
- });
+        imgs[i].addEventListener("mouseover", agrandar);
+        imgs[i].addEventListener("mouseout", normalidad);
+
+        function agrandar(){
+            imgs[i].style.transform = "scale(1.4)";
+            imgs[i].style.filter = "none";
+            cuadradoImagenes[i].style.bottom = "-100px";
+        }
+        function normalidad(){
+            imgs[i].style.transform = "scale(1)";
+            imgs[i].style.filter ="grayscale(1)";
+            cuadradoImagenes[i].style.bottom = "0px";
+        }
+
+
+    }
+
+   
+
+
+
+    // VALIDAR FORMULARIO //
+
+    // variables
+    let formulario = document.getElementById("formulario");
+    let nameForm = document.getElementById("nombre__value");
+    let emailForm = document.getElementById("email__value");
+    let telefonoForm = document.getElementById("telefono__value");
+    let textareaForm = document.getElementById("textarea__value");
+    let dateForm = document.getElementById("dia__value");
+    let dateFormContact = document.getElementById("dia__value__contacto");
+    let hourFormContact = document.getElementById("hora__value__contacto")
+  
+
+    //funciones
+
+    formulario.addEventListener("submit", function(){
+
+    //campo texto
+    
+    if(nameForm.value == 0 || nameForm.value == null || /^\s+$/.test(nameForm.value) || nameForm.value.length > 50 || !isNaN(nameForm.value) ) {
+
+        nameForm.classList.add("inputIncorrecto");
+        document.querySelector(".name__p").style.display = "block";
+
+    } else{
+        nameForm.classList.remove("inputIncorrecto");
+        document.querySelector(".name__p").style.display = "none";
+    }
+   
+    //campo email
+
+    if(emailForm.value == 0 || emailForm.value == null || /^\s+$/.test(emailForm.value) || emailForm.value.length > 50 || !/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/ ) {
+        emailForm.classList.add("inputIncorrecto");
+        document.querySelector(".email__p").style.display = "block";
+    } else{
+        emailForm.classList.remove("inputIncorrecto");
+        document.querySelector(".email__p").style.display = "none";
+    }
+   
+    //campo telefono
+
+    if(telefonoForm.value == 0 || telefonoForm.value == null || /^\s+$/.test(telefonoForm.value) || telefonoForm.value.length > 20 || isNaN(telefonoForm.value) ) {
+
+        telefonoForm.classList.add("inputIncorrecto");
+        document.querySelector(".telefono__p").style.display = "block";
+    } else{
+        telefonoForm.classList.remove("inputIncorrecto");
+        document.querySelector(".telefono__p").style.display = "none";
+    }
+   
+    //campo textarea
+
+    if(textareaForm.value.length > 200 ){
+
+        textareaForm.classList.add("inputIncorrecto");
+        document.querySelector(".textarea__p").style.display = "block";
+
+    } else{
+        textareaForm.classList.remove("inputIncorrecto");
+        document.querySelector(".textarea__p").style.display = "none";
+    }
+
+    //campo fecha
+
+    let nuevaFecha= new Date(); //fecha de hoy
+    
+    let actualDate= new Date(dateForm.value); //fecha que introduce el cliente
+    
+   
+    nuevaFecha.setHours(0,0,0,0);
+    actualDate.setHours(0,0,0,0);
+
+    if((nuevaFecha < actualDate) || (dateForm.value == 0)) {
+        document.querySelector(".date__p").style.display = "none";
+        dateForm.classList.remove("inputIncorrecto");
+
+    }  else{
+        
+        dateForm.classList.add("inputIncorrecto");
+        document.querySelector(".date__p").style.display = "block";
+    }
+    
+    
+})
+   
+   
+
+    
+
+
+    
+});

@@ -7,196 +7,246 @@
     <title>Dj Bodas y Eventos</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,700|Spicy+Rice&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/pushbar.css">
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 
 <body>
 
 
     <nav class="navegacion-header " id="menu-navegacion">
-        <div class="contenedor contenido-navegacion">
+        <div class="contenido-navegacion contenedor">
+            <nav class="contenido-navegacion-nav" id="contenido-navegacion-nav">
+                <ul class="menu__navegacion">
+                    <li class="menu__navegacion-li"><a href="index.html" target="_blank" class="lista2">inicio</a></li>
+                    <li class="menu__navegacion-li"><a href="quiensoy.html" target="_blank" class="lista2">quien soy</a></li>
+                    <li class="menu__navegacion-li"><a href="servicios.html" class="lista2">servicios</a></li>
+                    <li class="menu__navegacion-li"><a href="preguntas_frecuentes.html" target="_blank" class="lista2">preguntas frecuentes</a></li>
+                    <li class="menu__navegacion-li"><a href="contacta.html" target="_blank" class="lista2">contacta</a></li>
+        
+                </ul>
+            </nav>
 
-            <div><i class="fas fa-bars" id="barraHeader"></i></div>
-            <div><img class="icono_cascos" src="img/icono_cascos.png"></div>
-            <div>
-                <h2 class="h2_dj">DJ CHETE</h2>
-            </div>
-
+            <i class="fas fa-bars" id="barraHeader"></i>
+            <img class="icono_cascos" src="img/icono_cascos.png">
+            <h2 class="h2_dj" id="h2_dj">DJ CHETE</h2>
 
         </div>
 
     </nav>
 
-
     <!-- <div class="menu"> -->
+
+        
+
+
+
 
     <nav class="menuSacar" id="menuNav">
 
         <ul class="listaDesplegable">
-            <li class="listaPrincipio"><a href="#" class="lista">inicio</a></li>
-            <li class="listaPrincipio"><a href="#" class="lista">quien soy</a></li>
-            <li class="listaPrincipio"><a href="#" class="lista">servicios</a></li>
+            <li class="listaPrincipio"><a href="index.html" target="_blank" class="lista">inicio</a><button class="listaPrincipio-button">X</button></li>
+            <li class="listaPrincipio"><a href="quiensoy.html" target="_blank" class="lista">quien soy</a></li>
+            <li class="listaPrincipio"><a href="servicios.html" class="lista">servicios</a></li>
             <li class="listaPrincipio"><a href="preguntas_frecuentes.html" target="_blank" class="lista">preguntas
                     frecuentes</a></li>
-            <li class="listaPrincipio"><a href="#" class="lista"><span>contacta</span></a></li>
+            <li class="listaPrincipio"><a href="contacta.html" target="_blank"
+                    class="listaUltimo"><span>contacta</span></a>
+            </li>
 
         </ul>
     </nav>
 
 
 
-    <!-- </div> -->
-    <header class="i_header" id="header_position">
-
-        <figure>
-            <img src="img/boda-header (1).jpg">
-        </figure>
-        <div class="contenedor contenido-header" id="header-contenido">
-
-            <h1>DJ ANIMADOR DE BODAS Y EVENTOS</h1>
-            <input class="boton" type="button" value="Te llamamos">
-        </div>
+    <div class="opacidadMEnu">
 
 
-    </header>
+        <!-- </div> -->
+        <header class="i_header" id="header_position">
 
-    <main class="contenedor">
-        <h3 class="separador">Eventos</h3>
-        <div class="evento">
             <figure>
-                <img class="imagen-evento" src="img/boda-header (2).jpg" alt="evento-deportivo">
+                <img src="img/boda-header (1).jpg">
             </figure>
-            <div class="eventoEnlace">
-                <a href="#">bodas</a>
+            <div class="contenedor contenido-header" id="header-contenido">
+                <div class="contenido-header-div">
+
+                <h1>DJ ANIMADOR DE BODAS Y EVENTOS</h1>
+                <button class="boton">te llamamos</button>
             </div>
-        </div>
 
-        <div class="evento">
-            <figure>
-                <img class="imagen-evento" src="img/evento-cumpleaños.jpg" alt="evento-boda">
-            </figure>
-
-            <div class="eventoEnlace">
-                <a href="#">cumpleaños</a>
             </div>
-        </div>
-        <div class="evento">
-            <figure>
-                <img class="imagen-evento" src="img/evento-deportivo.jpg" alt="evento-deportivo">
-            </figure>
-
-            <div class="eventoEnlace">
-                <a href="#">eventos deportivos</a>
-            </div>
-        </div>
-        <div class="evento">
-            <figure>
-                <img class="imagen-evento" src="img/evento-empresa.jpg" alt="evento-empresa">
-            </figure>
-
-            <div class="eventoEnlace">
-                <a href="#">fiestas empresas</a>
-            </div>
-        </div>
-        <div class="evento">
-            <figure>
-                <img class="imagen-evento" src="img/evento-privado.jpg" alt="evento-privaddo">
-            </figure>
-
-            <div class="eventoEnlace">
-                <a href="#">eventos privados</a>
-            </div>
-        </div>
-    </main>
 
 
-    <div class="parallax contador">
-        <div class="contenedor">
-            <ul class="resumen-evento clearfix">
-                <li>
-                    <p class="numero">+10 años</p>
-                    <p>Experiencia</p>
-                </li>
-                <li>
-                    <p class="numero">+50</p>
-                    <p>Eventos</p>
-                </li>
-                <li>
-                    <p class="numero">100%</p>
-                    <p>Seriedad</p>
-                </li>
-                <li>
-                    <p class="numero">100%</p>
-                    <p>compromiso</p>
-                </li>
+        </header>
 
+        <main>
+            <h3 class="separador">Eventos</h3>
+            <div class="eventos__general ">
+                <div class="evento">
+                    <img class="imagen-evento" id="img1" src="img/boda-header (2).jpg" alt="evento-deportivo">
 
-            </ul>
-
-
-        </div>
-
-
-    </div> <!-- div parallax contador -->
-
-    <section class="blockquote_principal">
-
-        <h3 class="separador">testimoniales</h3>
-
-
-        <div class="testimonial contenedor">
-            <blockquote>
-                <p class="comillas">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut posuere velit, a
-                    pharetra magna. Praesent eget lectus ex. Ut efficitur orci eu ligula dapibus malesuada. Aliquam
-                    pharetra mattis lectus sed placerat. Nulla ultrices dolor sapien. Duis id nulla sagittis, elementum
-                    dui sit amet, lacinia nunc. </p>
-                <footer class="footer_blockquote">
-                    <div class="imagen1" style="background-image: url(../img/blockquote/invitado1.jpg)"></div>
-                    <div class="footer_imagen">
-                        <p>Ignacio González</p>
-                        <cite>Desarrolador web</cite>
+                    <div class="eventoEnlace">
+                        <a href="#">bodas</a>
                     </div>
-                </footer>
-            </blockquote>
+                </div>
 
-        </div>
-
-        <div class="testimonial contenedor">
-            <blockquote>
-                <p class="comillas">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut posuere velit, a
-                    pharetra magna. Praesent eget lectus ex. Ut efficitur orci eu ligula dapibus malesuada. Aliquam
-                    pharetra mattis lectus sed placerat. Nulla ultrices dolor sapien. Duis id nulla sagittis, elementum
-                    dui sit amet, lacinia nunc. </p>
-                <footer class="footer_blockquote">
-                    <div class="imagen1" style="background-image: url(../img/blockquote/invitado2.jpg)"></div>
-                    <div class="footer_imagen">
-                        <p>Ignacio González</p>
-                        <cite>Desarrolador web</cite>
+                <div class="evento">
+                    <img class="imagen-evento" id="img2" src="img/evento-cumpleaños.jpg" alt="evento-cumpleaños">
+                    <div class="eventoEnlace">
+                        <a href="#">cumpleaños</a>
                     </div>
-                </footer>
-            </blockquote>
+                </div>
+                <div class="evento">
+                    <img class="imagen-evento" id="img5" src="img/evento-privado.jpg" alt="evento-privado">
 
-        </div>
-
-        <div class="testimonial contenedor">
-            <blockquote>
-                <p class="comillas">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut posuere velit, a
-                    pharetra magna. Praesent eget lectus ex. Ut efficitur orci eu ligula dapibus malesuada. Aliquam
-                    pharetra mattis lectus sed placerat. Nulla ultrices dolor sapien. Duis id nulla sagittis, elementum
-                    dui sit amet, lacinia nunc. </p>
-                <footer class="footer_blockquote">
-                    <div class="imagen3" style="background-image: url(../img/blockquote/invitado1.jpg)"></div>
-                    <div class="footer_imagen">
-                        <p>Ignacio González</p>
-                        <cite>Desarrolador web</cite>
+                    <div class="eventoEnlace">
+                        <a href="#">eventos privados</a>
                     </div>
-                </footer>
-            </blockquote>
+                </div>
 
-        </div>
+                <div class="evento">
+                    <img class="imagen-evento" id="img4" src="img/evento-empresa.jpg" alt="fiesta empresa">
+
+                    <div class="eventoEnlace">
+                        <a href="#">fiestas empresas</a>
+                    </div>
+                </div>
+                <div class="evento">
+                    <img class="imagen-evento" id="img3" src="img/evento-deportivo.jpg" alt="evento-deportivo">
+                    <div class="eventoEnlace">
+                        <a href="#">eventos deportivos</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+
+        <div class="parallax contador">
+            <div class="contador__div">
+                <ul class="resumen-evento">
+                    <li>
+                        <p class="numero">+10 años</p>
+                        <p>Experiencia</p>
+                    </li>
+                    <li>
+                        <p class="numero">+50</p>
+                        <p>Eventos</p>
+                    </li>
+                    <li>
+                        <p class="numero">100%</p>
+                        <p>Seriedad</p>
+                    </li>
+                    <li>
+                        <p class="numero">100%</p>
+                        <p>compromiso</p>
+                    </li>
+
+
+                </ul>
+
+            </div>
+
+
+        </div> <!-- div parallax contador -->
+
+        <section class="blockquote_principal">
+
+            <h3 class="separador">testimoniales</h3>
+
+            <div class="blockquote_principal-div">
+                <div class="testimonial">
+                    <blockquote class="testimonial__blockquote">
+                        <p class="comillas">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut posuere
+                            velit,
+                            a
+                            pharetra magna. Praesent eget lectus ex. Ut efficitur orci eu ligula dapibus malesuada.
+                            Aliquam
+                            pharetra mattis lectus sed placerat. Nulla ultrices dolor sapien. Duis id nulla sagittis. </p>
+                        <footer class="footer_blockquote">
+                            <div class="footer_blockquote-img">
+                                <img class="footer_blockquote-img-img" src="img/blockquote/invitado1.jpg">
+                            </div> 
+                            <div class="footer_imagen">
+                                <p>Ignacio González</p>
+                                <cite>Desarrolador web</cite>
+                            </div>
+                        </footer>
+                    </blockquote>
+
+                </div>
+                <div class="testimonial">
+                    <blockquote class="testimonial__blockquote">
+                        <p class="comillas">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut posuere
+                            velit,
+                            a
+                            pharetra magna. Praesent eget lectus ex. Ut efficitur orci eu ligula dapibus malesuada.
+                            Aliquam
+                            pharetra mattis lectus sed placerat. Nulla ultrices dolor sapien. Duis id nulla sagittis.  </p>
+                        <footer class="footer_blockquote">
+                            <div class="footer_blockquote-img">
+                                <img class="footer_blockquote-img-img" src="img/blockquote/invitado1.jpg">
+                            </div> 
+                            <div class="footer_imagen">
+                                <p>Ignacio González</p>
+                                <cite>Desarrolador web</cite>
+                            </div>
+                        </footer>
+                    </blockquote>
+
+                </div>
+
+
+                <div class="testimonial">
+                    <blockquote class="testimonial__blockquote">
+                        <p class="comillas">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut posuere
+                            velit,
+                            a
+                            pharetra magna. Praesent eget lectus ex. Ut efficitur orci eu ligula dapibus malesuada.
+                            Aliquam
+                            pharetra mattis lectus sed placerat. Nulla ultrices dolor sapien. Duis id nulla sagittis.  </p>
+                        <footer class="footer_blockquote">
+                            <div class="footer_blockquote-img">
+                                <img class="footer_blockquote-img-img" src="img/blockquote/invitado1.jpg">
+                            </div> 
+                            <!-- class="imagen1" style="background-image: url(../img/blockquote/invitado1.jpg)">
+                            </div> -->
+                            <div class="footer_imagen">
+                                <p>Ignacio González</p>
+                                <cite>Desarrolador web</cite>
+                            </div>
+                        </footer>
+                    </blockquote>
+
+                </div>
+
+        </section>
+
+
+
+
+
+        <section class="imagen_dj">
+            <div class="contenedor contenido_dj">
+                <div class="contenido_dj-div">
+                    <p class="parrafo_dj">no dudes en contactarnos</p>
+
+                </div>
+                <div class="contenido_dj-div">
+                    <h2 class="h_dj">dj chete</h2>
+                </div>
+                <div class="contenido_dj-div">
+                    <input class="boton__contenido_dj" type="button" value="contáctanos">
+                </div>
+            </div>
+
+
+    </div> <!--opacidad menu-->
+
+
 
     </section>
 
@@ -204,21 +254,52 @@
 
 
 
-    <section class="imagen_dj">
-        <div class="contenedor contenido_dj">
-            <p class="parrafo_dj">no dudes en contactarnos:</p>
-            <h2 class="h_dj">dj chete</h2>
-            <input class="boton_dj" type="button" value="contáctanos">
+    <footer class="footer_abajo">
+
+
+        <div class="footer_fondo">
+            <div class=" footer_abajo__primero ">
+                <nav class="iconos_footer contenedor">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </nav>
+                <nav class="footer_abajo__segundo">
+                    <a href="">inicio</a>
+                    <a href="">quien soy</a>
+                    <a href="">servicios</a>
+                </nav>
+
+            </div>
+
+        </div>
+        <div class="fondo_footer">
+            <div class="footer_final contenedor">
+                <p>todos los derechos reservados &copy;</p>
+                <p><span class="footer__final-p-span">dj chete</span></p>
+            </div>
+
         </div>
 
 
+    </footer>
 
-    </section>
+
+
+
+    </div>
+
+
+
 
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery.lettering.js"></script>
     <script src="js/main.js"></script>
+
+
+
+
 
 </body>
 
