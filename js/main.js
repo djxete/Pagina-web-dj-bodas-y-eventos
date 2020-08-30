@@ -102,7 +102,10 @@ $(document).ready(function () {
     let dateForm = document.getElementById("dia__value");
     let dateFormContact = document.getElementById("dia__value__contacto");
     let hourFormContact = document.getElementById("hora__value__contacto")
-  
+    let isCheckedTelefono = document.querySelectorAll(".input_form-radio")[0].checked;
+    let isCheckedEmail = document.querySelectorAll(".input_form-radio")[1].checked;
+    
+    
 
     //funciones
 
@@ -170,7 +173,25 @@ $(document).ready(function () {
     }  else{
         
         dateForm.classList.add("inputIncorrecto");
-        document.querySelector(".date__p").style.display = "block";
+        
+    }
+
+    //checkbox como desea ser contactado
+
+    if((!document.querySelectorAll(".input_form-radio")[0].checked) && (!document.querySelectorAll(".input_form-radio")[1].checked)){
+
+    
+    document.querySelector(".radio__block").style.display = "block";
+        
+    } else if((document.querySelectorAll(".input_form-radio")[0].checked) && (document.querySelectorAll(".input_form-radio")[1].checked)){
+
+      
+        document.querySelector(".radio__block").style.display = "block";
+        
+
+    } else{
+    
+    document.querySelector(".radio__block").style.display = "none";
     }
     
     

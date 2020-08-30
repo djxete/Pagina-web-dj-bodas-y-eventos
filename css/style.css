@@ -1248,7 +1248,8 @@ ul.resumen-evento li {
 
 .formulario3-p {
     color: #6b6868;
-    margin-bottom: 15px;
+    margin: 40px 0 10px;
+
 }
 
 .formulario3__div {
@@ -1258,6 +1259,7 @@ ul.resumen-evento li {
     max-width: 100%;
     height: 38px;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 
 
 }
@@ -1266,6 +1268,7 @@ ul.resumen-evento li {
 
     line-height: 38px;
     margin-bottom: 0 !important;
+    
 }
 
 .form-control-ok, .form-control-error, .form-control-small{
@@ -1276,9 +1279,20 @@ ul.resumen-evento li {
 
 
 .input_form-radio {
+    flex-basis: 10%;
     width: 20%;
     justify-items: self-start;
     margin-right: 10px;
+}
+
+.formulario3__div-p{
+padding: 5px 0;
+   width: 100%
+
+}
+
+.fechaLabel,.horaLabel{
+    margin-top: 15px;
 }
 
 /*----------------------- PÁGINA QUIEN SOY----------------------------- */
@@ -2346,9 +2360,10 @@ ul.resumen-evento li {
         border: 2px solid green;
     }
 
-    .name__p, .email__p, .telefono__p, .textarea__p, .date__p{
+    .name__p, .email__p, .telefono__p, .textarea__p, .date__p, .radio__block{
         color: red;
-        display: none;
+        display: none; 
     }
-    
+
+   
 
