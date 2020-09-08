@@ -78,7 +78,7 @@
             <!-- <img src="img/contacta.jpg" class="imagen_contacta2" alt="imagen_contacta"> -->
 
 
-            <form action="#" class="contenedor formulario" id="formulario">
+            <!-- <form action="#" class="contenedor formulario" id="formulario">
 
 
                 <fieldset class="formulario1">
@@ -164,6 +164,95 @@
                 </fieldset>
 
 
+            </form> -->
+
+
+            <form action="#" class="contenedor formulario" id="formulario">
+
+
+                <fieldset class="formulario1">
+                    <legend>información personal</legend>
+
+                    <div class="form-control">
+                        <label for="nombre">nombre:</label>
+                        <input type="text" placeholder="Tu nombre" class="input_form" id="inputElemento" name="nombre">
+                        <p class="name__p">El nombre tiene que ser solo letras</p>
+                    </div>
+
+                    <div class="form-control">
+
+                        <label for="">email:</label>
+                        <input type="email" placeholder="Tu correo electrónico" class="input_form" id="inputElemento" name="correo">
+                        <p class="email__p">Debe ser una dirección de email válida</p>
+                    </div>
+
+                    <div class="form-control">
+
+                        <label for="">teléfono:</label>
+                        <input type="tel" placeholder="Tu número de teléfono" class="input_form" id="inputElemento" name="telefono">
+                        <p class="telefono__p">El teléfono debe ser solo números(entre 7 y 14 números) y no puede contener símbolos</p>
+
+                    </div>
+
+                    <label for="">mensaje:</label>
+                    <input class="input_alto input_form" type="text" id="inputElemento" name="textoArea">
+                    <p class="textarea__p">No puede tener mas de 200 caracteres</p>
+                </fieldset>
+
+                <fieldset class="formulario2">
+                    <legend>información eventos</legend>
+
+                    <label for="opciones">tipo de evento</label>
+                    <select name="" id="">
+                        <option value="" disabled>-- Selecciona--</option>
+                        <option value="">Boda</option>
+                        <option value="">Cumpleaños</option>
+                        <option value="">Evento deportivo</option>
+                        <option value="">Fiesta empresa</option>
+                        <option value="">Evento privado</option>
+                    </select>
+
+                    <label for="">dia</label>
+                    <input type="date" class="input_form" id="inputElemento" name="dia">
+                    <p class="date__p">Como mínimo debe de ser mañana</p>
+
+                </fieldset>
+
+                <fieldset class="formulario3">
+
+                    <legend>infomación contacto</legend>
+
+
+                    <p class="formulario3-p">Cómo desea ser contactado:</p>
+
+                    <div class="formulario3__div">
+
+                        <label for="" class="formulario3__div-label">teléfono</label>
+                        <input type="checkbox" class="input_form-radio" id="inputElemento">
+                        <label for="" class="formulario3__div-label">email</label>
+                        <input type="checkbox" class="input_form-radio" id="inputElemento">
+                    
+                        <p class="radio__block formulario3__div-p">Tienes que señalar o teléfono o email</p>
+
+                    </div>
+
+                    <p class="formulario3-p">Si eligió teléfono, eliga ahora la fecha y hora:</p>
+
+                   
+
+                    <label for="" class="fechaLabel">fecha</label>
+                    <input type="date" class="input_form" id="inputElemento">
+                    <p class="date__p">Tienes que elegir una fecha obligatoria. Como mínimo mañana</p>
+                    <label for="" class="horaLabel">hora</label>
+                    <input type="time" class="input_form" id="inputElemento">
+                    <p class="date__p">No puede estar vacio</p>
+
+
+                    <input type="submit" class="botton_form" value="Enviar" id="submit">
+
+                </fieldset>
+
+
             </form>
 
 
@@ -208,7 +297,7 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery.lettering.js"></script>
 
-    <script src="js/main.js"></script>
+    <script src="js/main2.js"></script>
 
 </body>
 

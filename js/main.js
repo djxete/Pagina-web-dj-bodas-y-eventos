@@ -219,41 +219,13 @@ $(document).ready(function () {
             else{
                 document.querySelectorAll(".date__p")[1].style.display = "none";
             }
-            // else if(hourFormContact.value == 0){
-                
-            //     document.querySelectorAll(".date__p")[2].style.display = "block";
-
-            // }
             
-            // else {
-
-            //     if ((nuevaFecha2 < actualDate2)) {
-            //         document.querySelectorAll(".date__p")[1].style.display = "none";
-            //         dateForm2.classList.remove("inputIncorrecto");
-
-            //     } else {
-
-            //         dateForm2.classList.add("inputIncorrecto");
-            //         document.querySelectorAll(".date__p")[1].style.display = "block";
-
-            //     }
-
-            // }
-
 
 
         }
 
 
-        //si eligió teléfono, eliga fecha y hora
-
-
-        /*if (document.querySelectorAll(".input_form-radio")[0].checked) {
-
-            
-
-
-        }*/
+       
 
 
 
@@ -261,6 +233,7 @@ $(document).ready(function () {
 
 
 
+        
 
 
 

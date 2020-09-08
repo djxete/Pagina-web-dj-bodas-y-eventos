@@ -2349,7 +2349,7 @@ padding: 5px 0;
     /* Clases formulario */
 
     .inputCorrecto{
-        border: 1px solid green;
+        border:none;
     }
 
     .inputIncorrecto{
@@ -2362,7 +2362,7 @@ padding: 5px 0;
 
     .name__p, .email__p, .telefono__p, .textarea__p, .date__p, .radio__block{
         color: red;
-        display: none; 
+        display: none;
     }
 
    
