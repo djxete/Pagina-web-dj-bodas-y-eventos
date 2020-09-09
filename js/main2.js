@@ -1,6 +1,7 @@
 // 1º seleccionamos todos los inputs
 let inputs = document.querySelectorAll("#inputElemento");
 let inputsValue = document.querySelectorAll("#inputElemento");
+//console.log(inputsValue)
 
 let inputPrueba = document.getElementById("inputElemento").value;
 
@@ -144,39 +145,80 @@ function validarCampo(e) {
 
                 let diaActual = new Date();
                 let diaIntroduceCliente = new Date(value5);
-                
-
-                diaActual.setHours(0,0,0,0);
-                diaIntroduceCliente.setHours(0,0,0,0);
-
-                if(diaIntroduceCliente > diaActual){
-
-                document.querySelectorAll("input")[4].classList.remove("inputIncorrecto");
-                document.querySelectorAll("input")[4].classList.add("inputCorrecto");
-                document.getElementsByClassName("date__p")[0].style.display = "none";
 
 
-                } else if(value5 == 0){
+                diaActual.setHours(0, 0, 0, 0);
+                diaIntroduceCliente.setHours(0, 0, 0, 0);
+
+                if (diaIntroduceCliente > diaActual) {
 
                     document.querySelectorAll("input")[4].classList.remove("inputIncorrecto");
                     document.querySelectorAll("input")[4].classList.add("inputCorrecto");
                     document.getElementsByClassName("date__p")[0].style.display = "none";
 
-                } else{
+
+                } else if (value5 == 0) {
+
+                    document.querySelectorAll("input")[4].classList.remove("inputIncorrecto");
+                    document.querySelectorAll("input")[4].classList.add("inputCorrecto");
+                    document.getElementsByClassName("date__p")[0].style.display = "none";
+
+                } else {
                     document.getElementsByClassName("date__p")[0].style.display = "block";
                 }
-               
 
-            
-                
+
+
             }
 
             validarFecha(value5);
 
+
+
+            break;
+
+
+
+
+
+            // case"telefonoRadio": //validar teléfono radio
+
+            // let value6= e.target.checked;
+
+
+
+
+            //  if(value6){
+            //    value6.addEventListener(botonRadioEmail);
+
+            // } else{
+            //     value6.addEventListener(botonRadioEmail);
+            //    //document.getElementsByClassName("radio__block")[0].style.display = "none";
+
+            // }
+
+
+
+            // break;
+
+            //  case"emailRadio": //validar email radio
+
+            //  let value7= e.target.checked;
+
+            //  function botonRadioEmail(){
+
+            //  }
+
+
+
+
+
+
+
+
         default:
             break;
     }
-
 
 
 
@@ -195,3 +237,121 @@ function bordeNormal() {
         })
     })
 }
+
+
+//validar telefono y email de los RADIO BUTTONS
+
+let campoTelefono = document.querySelector(".input_form-radio"); //input teléfono
+let campoEmail = document.getElementsByClassName("input_form-radio")[1]; //input email
+
+
+
+campoTelefono.addEventListener("focus", function () {
+    document.querySelector(".input_form-radio").classList.add("inputCorrecto");
+
+});
+campoTelefono.addEventListener("blur", function () {
+    if (campoTelefono.checked && campoEmail.checked) {
+        document.getElementsByClassName("radio__block")[0].style.display = "block";
+    }
+    else if(campoEmail.checked){
+        document.getElementsByClassName("radio__block")[0].style.display = "none";
+    }
+
+
+    });
+
+
+
+
+campoEmail.addEventListener("focus", function () {
+    document.querySelector(".input_form-radio").classList.add("inputCorrecto");
+
+});
+campoEmail.addEventListener("blur", function () {
+    if (campoTelefono.checked && campoEmail.checked) {
+        document.getElementsByClassName("radio__block")[0].style.display = "block";
+    } else if(campoEmail.checked){
+        document.getElementsByClassName("radio__block")[0].style.display = "none";
+    }
+    
+    else {
+        document.getElementsByClassName("radio__block")[0].style.display = "none";
+    }
+
+});
+
+
+
+
+
+// validar la fecha de abajo, si ha elegido el telefono tenemos que validar esta fecha
+//--------------------------------------------------------------
+
+let campoFecha = document.getElementById("fechaRadio"); // input fecha
+//console.log(campoFecha)
+
+function validarFechaAbajo() {
+
+    let fechaAbajo = new Date;
+    let fechaAbajoCliente = new Date(campoFecha.value);
+    let parrafoFechaAbajo = document.querySelectorAll(".date__p")[1];
+
+    fechaAbajo.setHours(0, 0, 0, 0);
+    fechaAbajoCliente.setHours(0, 0, 0, 0);
+
+    parrafoFechaAbajo.style.display = "block";
+    campoFecha.style.border = "3px solid red";
+
+    if (fechaAbajoCliente <= fechaAbajo || campoFecha.value == 0) {
+        parrafoFechaAbajo.style.display = "block";
+        //console.log("fecha erronea");
+
+    } else {
+        parrafoFechaAbajo.style.display = "none";
+        campoFecha.style.border = "none";
+        //console.log("fecha correcta");
+    }
+
+}
+
+
+campoFecha.addEventListener("focus", () => {
+
+    //console.log("has hecho focus");
+    campoFecha.style.border = "3px solid red";
+});
+
+campoFecha.addEventListener("blur", validarFechaAbajo);
+
+
+
+
+// validamos hora debajo de fecha
+//--------------------------------------
+
+let horaAbajo = document.querySelectorAll("#inputElemento")[7];
+
+function validarHoraAbajo() {
+
+
+
+    
+    let parrafoHoraAbajo = document.querySelectorAll(".date__p")[2];
+    //console.log(horaAbajo)
+    if (horaAbajo.value == 0) {
+        parrafoHoraAbajo.style.display = "block";
+    } else {
+        horaAbajo.style.border = "none";
+        parrafoHoraAbajo.style.display = "none";
+    }
+
+}
+
+horaAbajo.addEventListener("focus", () => {
+
+    //console.log("has hecho focus");
+    horaAbajo.style.border = "3px solid red";
+});
+
+horaAbajo.addEventListener("blur", validarHoraAbajo);
