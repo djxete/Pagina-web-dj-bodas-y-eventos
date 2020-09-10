@@ -20,12 +20,14 @@ body {
     background-color: #ececec9a;
     position: relative;
     font-family: 'PT Sans', sans-serif;
+ 
 
 
 }
 
 .opacidadMEnu {
     opacity: 1;
+   
 
 
 }
@@ -1016,6 +1018,7 @@ ul.resumen-evento li {
 .footer_abajo {
     width: 100%;
     height: 275px;
+    
 }
 
 .footer_fondo {
@@ -1136,6 +1139,7 @@ ul.resumen-evento li {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 
 }
 
@@ -1145,6 +1149,7 @@ ul.resumen-evento li {
     font-size: 18px;
     line-height: 1.7;
     display: block;
+    
 
 
 }
@@ -1562,7 +1567,35 @@ padding: 5px 0;
     box-shadow: 0 0 10px 0 #e74c3c inset, 0 0 10px 4px #e74c3c;
 }
 
+/*----------------------- PÁGINA FORMULARIO OK----------------------------- */
+.formularioOk{
+    margin-top: 50px;
+}
+.formularioOK__div{
+    background-color: rgb(245, 209, 199);
+    width: 85%;
+    margin: 40px auto 40px;
+    transition: all .3s ease-in-out;
+    padding: 20px;
+    transform: scale(1.1);
+    border: 5px dashed #f8704a;
+}
+.formularioOK__div-p {
+    font-weight: 800;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: calc(3vw + 3vh);
+    margin: 0;
+}
+.formularioOK__div-p-img{
+    display: block;
+    margin: 0 auto;
+    max-width: 25%;
+    max-height: 25%;
+  
 
+}
 
 
 

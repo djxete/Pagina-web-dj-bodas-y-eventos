@@ -1,3 +1,10 @@
+//Hemos hecho dos validaciones. 1º en vivo y 2º al hacer click en el botón enviar(empieza en linea 364)
+
+
+// 1º VALIDACIÓN EN VIVO
+//----------------------------------------------------------------
+
+
 // 1º seleccionamos todos los inputs
 let inputs = document.querySelectorAll("#inputElemento");
 let inputsValue = document.querySelectorAll("#inputElemento");
@@ -24,7 +31,7 @@ inputs.forEach(function (input) {
 });
 //3º funcion validar campo
 
-let validar = {
+/*let validar = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     apellidos: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -32,16 +39,7 @@ let validar = {
     // mensaje: validarMensaje(),
     // dia: validarDiaYfecha(),
     // hora: validarHora()
-
-}
-
-let validarOtro = {
-    nombre: false,
-    apellidos: false,
-    correo: false,
-    telefono: false
-}
-
+}*/
 
 
 
@@ -274,7 +272,7 @@ campoEmail.addEventListener("blur", function () {
     } else if(campoEmail.checked){
         document.getElementsByClassName("radio__block")[0].style.display = "none";
     }
-    
+
     else {
         document.getElementsByClassName("radio__block")[0].style.display = "none";
     }
@@ -318,6 +316,8 @@ function validarFechaAbajo() {
 
 campoFecha.addEventListener("focus", () => {
 
+
+
     //console.log("has hecho focus");
     campoFecha.style.border = "3px solid red";
 });
@@ -336,7 +336,7 @@ function validarHoraAbajo() {
 
 
 
-    
+
     let parrafoHoraAbajo = document.querySelectorAll(".date__p")[2];
     //console.log(horaAbajo)
     if (horaAbajo.value == 0) {
@@ -355,3 +355,249 @@ horaAbajo.addEventListener("focus", () => {
 });
 
 horaAbajo.addEventListener("blur", validarHoraAbajo);
+
+
+
+//----------------------------------------------
+
+
+// 2º VALIDACIÓN AL HACER CLICK EN EL BOTÓN ENVIAR
+//----------------------------------------------------------------
+
+let form = document.getElementById("formulario");
+
+form.addEventListener("submit", validarTodoElFormulario)
+
+
+function validarTodoElFormulario(e) {
+
+    //TODOS LOS INPUTS
+    let inputs = document.querySelectorAll("#inputElemento");
+    //console.log(inputs)
+
+
+
+    //CAMPO NOMBRE
+
+    let nombreInput = document.getElementById("inputElemento").value;
+    //console.log(nombreInput);
+
+    if (isNaN(nombreInput) && (nombreInput.length <= 25) && (nombreInput !== null)) {
+        document.querySelectorAll("input")[0].classList.remove("inputIncorrecto");
+        document.querySelectorAll("input")[0].classList.add("inputCorrecto");
+        document.getElementsByClassName("name__p")[0].style.display = "none";
+        //console.log("input valido");
+
+    } else {
+        document.getElementsByClassName("name__p")[0].style.display = "block";
+        //console.log("input incorrecto");
+        e.preventDefault();
+    }
+
+    //CAMPO EMAIL
+
+    let correoInput = inputs[1].value;
+    //console.log(correoInput);
+
+
+
+    let emailValidacion = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+    function validarEmail(correoInput) {
+
+        if (emailValidacion.test(correoInput)) {
+
+            document.querySelectorAll("input")[1].classList.remove("inputIncorrecto");
+            document.querySelectorAll("input")[1].classList.add("inputCorrecto");
+            document.getElementsByClassName("email__p")[0].style.display = "none";
+
+        } else {
+
+            document.getElementsByClassName("email__p")[0].style.display = "block";
+            e.preventDefault();
+
+        }
+    }
+
+    validarEmail(correoInput);
+
+
+    //CAMPO TELÉFONO
+
+    let telefonoInput = inputs[2].value;
+
+    let telefonoValidacion = /^\d{7,14}$/;
+
+    function validarTelefono(telefonoInput) {
+
+        if (telefonoValidacion.test(telefonoInput)) {
+            document.querySelectorAll("input")[2].classList.remove("inputIncorrecto");
+            document.querySelectorAll("input")[2].classList.add("inputCorrecto");
+            document.getElementsByClassName("telefono__p")[0].style.display = "none";
+
+        } else {
+            document.getElementsByClassName("telefono__p")[0].style.display = "block";
+            e.preventDefault();
+        }
+
+    }
+
+    validarTelefono(telefonoInput);
+
+
+    //CAMPO MENSAJE
+
+
+    let textareaInput = inputs[3].value;
+
+
+
+    if (textareaInput.length > 200) {
+
+        document.getElementsByClassName("textarea__p")[0].style.display = "block";
+        e.preventDefault();
+
+    } else if (textareaInput = null) {
+
+        document.querySelectorAll("input")[3].classList.remove("inputIncorrecto");
+        document.querySelectorAll("input")[3].classList.add("inputCorrecto");
+        document.getElementsByClassName("textarea__p")[0].style.display = "none";
+
+    } else {
+
+        document.querySelectorAll("input")[3].classList.remove("inputIncorrecto");
+        document.querySelectorAll("input")[3].classList.add("inputCorrecto");
+        document.getElementsByClassName("textarea__p")[0].style.display = "none";
+
+    }
+
+    // CAMPO DIA INFORMACION EVENTOS
+
+    let diaInput = inputs[4].value;
+
+
+
+    function validarFecha() {
+
+        let diaActual = new Date();
+        let diaIntroduceCliente = new Date(diaInput);
+
+
+        diaActual.setHours(0, 0, 0, 0);
+        diaIntroduceCliente.setHours(0, 0, 0, 0);
+
+        if (diaIntroduceCliente > diaActual) {
+
+            document.querySelectorAll("input")[4].classList.remove("inputIncorrecto");
+            document.querySelectorAll("input")[4].classList.add("inputCorrecto");
+            document.getElementsByClassName("date__p")[0].style.display = "none";
+
+
+        } else if (diaInput == 0) {
+
+            document.querySelectorAll("input")[4].classList.remove("inputIncorrecto");
+            document.querySelectorAll("input")[4].classList.add("inputCorrecto");
+            document.getElementsByClassName("date__p")[0].style.display = "none";
+
+        } else {
+            document.getElementsByClassName("date__p")[0].style.display = "block";
+            e.preventDefault();
+        }
+
+
+
+    }
+
+    validarFecha(diaInput);
+
+
+
+    // CAMPO TELEFONO Y EMAIL
+
+
+    let campoTelefono = document.querySelector(".input_form-radio"); //input teléfono
+    let campoEmail = document.getElementsByClassName("input_form-radio")[1]; //input email
+
+
+
+    if(campoTelefono.checked && campoEmail.checked){
+       document.getElementsByClassName("radio__block")[0].style.display = "block";
+    }
+
+
+
+// CAMPO FECHA INFORMACION CONTACTO
+
+
+let campoFecha = document.getElementById("fechaRadio"); // input fecha
+//console.log(campoFecha)
+
+function validarFechaAbajo() {
+
+    let fechaAbajo = new Date;
+    let fechaAbajoCliente = new Date(campoFecha.value);
+    let parrafoFechaAbajo = document.querySelectorAll(".date__p")[1];
+
+    fechaAbajo.setHours(0, 0, 0, 0);
+    fechaAbajoCliente.setHours(0, 0, 0, 0);
+
+    parrafoFechaAbajo.style.display = "block";
+    campoFecha.style.border = "3px solid red";
+
+    if (fechaAbajoCliente <= fechaAbajo || campoFecha.value == 0) {
+        parrafoFechaAbajo.style.display = "block";
+        e.preventDefault();
+        //console.log("fecha erronea");
+
+    } else {
+        parrafoFechaAbajo.style.display = "none";
+        campoFecha.style.border = "none";
+        //console.log("fecha correcta");
+    }
+
+}
+
+
+    //console.log("has hecho focus");
+    campoFecha.style.border = "3px solid red";
+
+
+    validarFechaAbajo();
+
+
+
+// CAMPO HORA FINAL
+
+
+
+
+let horaAbajo = document.querySelectorAll("#inputElemento")[7];
+
+function validarHoraAbajo() {
+
+
+
+
+    let parrafoHoraAbajo = document.querySelectorAll(".date__p")[2];
+    //console.log(horaAbajo)
+    if (horaAbajo.value == 0) {
+        parrafoHoraAbajo.style.display = "block";
+        e.preventDefault();
+    } else {
+        horaAbajo.style.border = "none";
+        parrafoHoraAbajo.style.display = "none";
+    }
+
+}
+
+validarHoraAbajo();
+
+
+
+
+
+  }
+
+        
+
+  
