@@ -1,4 +1,27 @@
 
+/* PÁGINA FORMULARIO OK*/
+
+/* html {
+    height: 100%;
+  }
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  .formularioOK {
+    height: 100%;
+    padding: 20px;
+  }
+  .footer_abajo {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  */
+/* FIN PÁGINA FORMULARIO OK */
+
+
+
 html {
     box-sizing: border-box;
 }
@@ -20,17 +43,15 @@ body {
     background-color: #ececec9a;
     position: relative;
     font-family: 'PT Sans', sans-serif;
- 
 
+    
 
 }
 
-.opacidadMEnu {
+/* .opacidadMEnu {
     opacity: 1;
-   
 
-
-}
+} */
 
 p,
 ul,
@@ -74,6 +95,8 @@ h3 {
 /* --------------------------- BOTONES----------------------------------- */
 
 .boton {
+    display: inline-block;
+    width: 75%;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -89,7 +112,7 @@ h3 {
     display: flex;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
-      font-size: 1rem;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 1;
     padding: 1.2em 2.8em;
@@ -101,14 +124,15 @@ h3 {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-
+    background-color: #f8704a;
+    color: #fff;
 }
 
 .boton:hover,
 .boton:focus {
     color: #fff;
     outline: 0;
-    border-color: #e74c3c;
+    border-color: #d37a70;
     color: #fff;
     background-color: #f8704a;
     -webkit-transition: all 150ms ease-in-out;
@@ -171,7 +195,7 @@ h3 {
 
     background-color: #f8704a;
     border-bottom: 2px dotted black;
-    height: 60px;
+    /*height: 60px; /* esto es solo para la página de formulariook*/
     transition: all .1s;
     position: sticky;
     top: 0;
@@ -300,6 +324,7 @@ h3 {
 }
 
 .menuSacar {
+    top:60px;
     width: 88%;
     margin: 0;
     background-color: rgb(34, 34, 34, 1);
@@ -331,10 +356,10 @@ h3 {
     transition: all .6s ease-in-out;
 
 }
-.listaPrincipio:first-child{
+/* .listaPrincipio:first-child{
     display: grid;
     grid-template-columns: repeat(18,1fr);
-}
+} */
 
 .listaPrincipio-button{
     background-color: #f8704a;
@@ -380,7 +405,7 @@ h3 {
 }
 
 .lista:first-child{
-    grid-column: 9/11;
+    grid-column: 9/10;
 
 }
 
@@ -658,7 +683,7 @@ ul.resumen-evento li {
     display: flex;
     justify-content: space-between;
     overflow: hidden;
-    padding: 5px 0 0 30px;
+    padding: 3px 0 0 30px;
     align-items: center;
 
 }
@@ -720,7 +745,7 @@ ul.resumen-evento li {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 30px;
+    
     background-color: #f7ab6e;
 
 }
@@ -760,7 +785,7 @@ ul.resumen-evento li {
     margin: auto 10px auto 0;
     border: 2px solid #b34903;
     width: 100%;
-    height: 80%;
+    height: 100%;
 
 }
 
@@ -788,7 +813,7 @@ ul.resumen-evento li {
 }
 
 .pf_bloque2 {
-    min-width: 100%;
+    width: 90%;
     display: grid;
     grid-template-columns: 66% 34%;
     height: 100%;
@@ -805,7 +830,8 @@ ul.resumen-evento li {
 .pf_icono_color-p{
     color: #464646;
     font-weight: 600;
-    font-size: 10px;
+    font-size: calc(1.2vw + 1.2vh);
+    align-self: center
 }
 
 .pf_icono {
@@ -819,7 +845,6 @@ ul.resumen-evento li {
 
 .pf_icono p {
     flex-basis: calc(25% - 5px);
-   
 
 
 }
@@ -848,7 +873,7 @@ ul.resumen-evento li {
 
 .pf_resta {
     background: url("../img/imagen_resta2.png") no-repeat;
-    color: #fe4918;
+    
     background-size: 19px 30px;
     background-position: left bottom;
     padding: 10px 0 0 30px;
@@ -860,6 +885,12 @@ ul.resumen-evento li {
 }
 
 #respuesta{
+    display: none;
+}
+.respuesta{
+    display: block;
+}
+.respuestaNegativa{
     display: none;
 }
 
@@ -1017,7 +1048,6 @@ ul.resumen-evento li {
 
 .footer_abajo {
     width: 100%;
-    height: 275px;
     
 }
 
@@ -1060,9 +1090,7 @@ ul.resumen-evento li {
     background: #f8704a;
 }
 
-.footer_abajo {
-    height: 100%;
-}
+
 
 
 .footer_abajo__primero {
@@ -1568,17 +1596,24 @@ padding: 5px 0;
 }
 
 /*----------------------- PÁGINA FORMULARIO OK----------------------------- */
-.formularioOk{
-    margin-top: 50px;
+
+
+.formularioGeneral{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 585px;
 }
 .formularioOK__div{
     background-color: rgb(245, 209, 199);
     width: 85%;
-    margin: 40px auto 40px;
+    margin: 0 auto 100px;
     transition: all .3s ease-in-out;
     padding: 20px;
     transform: scale(1.1);
     border: 5px dashed #f8704a;
+    
+    
 }
 .formularioOK__div-p {
     font-weight: 800;
@@ -1592,9 +1627,16 @@ padding: 5px 0;
     display: block;
     margin: 0 auto;
     max-width: 25%;
-    max-height: 25%;
+   max-height: 25%;
   
 
+}
+.footer_abajoSticky{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0; 
+     
 }
 
 
@@ -1607,6 +1649,10 @@ padding: 5px 0;
 
 
 @media (min-width: 480px) {
+
+    .boton{
+        width:50%;
+    }
 
     .contenido-navegacion {
         width: 80%;
@@ -1714,6 +1760,10 @@ padding: 5px 0;
 
 @media (min-width: 600px) {
 
+    .boton{
+        width:40%;
+    }
+
     .contenido-header-div {
         height: 100%;
         display: flex;
@@ -1794,6 +1844,11 @@ padding: 5px 0;
 
 
 @media (min-width: 768px) {
+
+    .boton{
+        width:40%;
+    }
+
 
     .contenido-header {
         padding: 15px 15px;
@@ -2017,6 +2072,11 @@ padding: 5px 0;
 
 @media(min-width: 1024px) {
 
+    .boton{
+        width:25%;
+    }
+
+
     .navegacion-header {
         height: 110px;
     }
@@ -2201,6 +2261,10 @@ padding: 5px 0;
 
 @media(min-width: 1500px) {
 
+    .boton{
+        width:15%;
+    }
+
     .h2_dj {
         font-size: 22px;
     }
@@ -2260,15 +2324,18 @@ padding: 5px 0;
 
         font-size: 17px;
         line-height: 1.2;
+        
     }
 
     .footer_blockquote {
-        height: 40%;
+        height: 50%;
+        margin-top:0;
     }
 
     .footer_blockquote-img {
         height: 100px;
         width: 100px;
+
     }
 
     .footer_final {
@@ -2375,8 +2442,10 @@ padding: 5px 0;
       .tablaprecios1:nth-child(1){
           margin-right: 70px;
       }
-    }
 
+
+    }
+/* fin 1500px media query */
 
 
     /* Clases formulario */
@@ -2398,5 +2467,5 @@ padding: 5px 0;
         display: none;
     }
 
-   
 
+   
